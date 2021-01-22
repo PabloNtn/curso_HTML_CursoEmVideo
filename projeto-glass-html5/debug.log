@@ -1,0 +1,1 @@
+[0107/221822.177:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\deskadmin\AppData\Local\Google\Chrome\User Data\Crashpad\reports\93a4781e-0541-4ed8-8949-a5810df98b78.dmp: O arquivo já está sendo usado por outro processo. (0x20)

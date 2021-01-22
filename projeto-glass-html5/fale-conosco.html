@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>secao</title>
+    <link rel="stylesheet" type="text/css" href="_css/form.css">
+    <link rel="stylesheet" type="text/css" href="_css/estiloresp.css">
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    
+    <script src="../projeto-glass-html5/_javascript/funcoes.js"></script>
+    <script>
+        function myFunction() {
+            var qtd = parseInt(document.getElementById('cqtd').value)
+            tot = 1500 * qtd
+            document.getElementById('ctot').value = tot
+        }
+    </script>
+</head>
+
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+            </hgroup>
+
+            <img id="icone" src="_imagens/contato.png">
+
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ul>
+                    <li onmouseenter="entrar('home')" onmouseleave="saida('contato')">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li onmouseenter="entrar('especificacoes')" onmouseleave="saida('contato')">
+                        <a href="specs.html">Especificações</a>
+                    </li>
+                    <li onmouseenter="entrar('fotos')" onmouseleave="saida('contato')">
+                        <a href="fotos.html">Fotos</a>
+                    </li>
+                    <li onmouseenter="entrar('multimidia')" onmouseleave="saida('contato')">
+                        <a href="multimidia.html">Multimídia</a>
+                    </li>
+                    <li onmouseenter="entrar('contato')" onmouseleave="saida('contato')">
+                        <a href="fale-conosco.html">Fale conosco</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section id="corpo-full">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                        <h3>Fale Conosco > Contato</h3>
+                        <h1>Formulário de Contato</h1>
+                        <h2>por Gustavo Guanabara</h2>
+                        <h3>Atualizado em 01/Maio/2013</h3>
+                    </hgroup>
+                </header>
+
+                <form method="post" id="fcontato" action="mailto:souza.monteiro.sjc@gmail.com" oninput="myFunction()">
+                    <fieldset id="usuario" >
+                        <legend>
+                            Identificação do Usuário
+                        </legend> 
+                        <p>
+                            <label for="tnome" id="nome">Nome:</label> 
+                            <input type="text" name="txtnome" id="tnome" size="20" maxlength="30" placeholder="Digite seu nome completo">
+                        </p>
+                        <p>
+                            <label for="tsenha">Senha:</label> 
+                            <input type="password" name="txtsenha" id="tsenha" size="8" maxlength="8" placeholder="8 digitos">
+                        </p>
+                        <p>
+                            <label for="temail">E-mail:</label> 
+                            <input type="email" name="txtemail" id="temail" size="20" maxlength="40" placeholder="Digite seu email">
+                        </p>
+                        <fieldset id="sexo">
+                            <legend> Sexo:</legend> 
+                            <input type="radio" name="optsexo" id="optMasc" checked><label for="optMasc">Masculino</label><br> 
+                            <input type="radio" name="optsexo" id="optFem"><label for="optFem">Feminino</label> 
+                        </fieldset>
+                        <p>
+                            <label for="tdata">Data de Nascimento:</label> 
+                            <input type="date" name="txtdata" id="tdata">
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="endereco">
+                        <legend>
+                            Endereço do Usuário
+                        </legend> 
+                        <p>
+                            <label for="tlog">Logradouro:</label>
+                            <input type="text" name="txtlog" id="tlog" size="16" maxlength="50" placeholder="rua, av, ...">
+                        </p>
+                        <p>
+                            <label for="tnum">Número:</label>
+                            <input type="number" name="txtnum" id="tnum" size="20" maxlength="9999" placeholder="numero">
+                        </p>
+                        <p>
+                            <label for="testad">Estado:</label>
+                            <select name="selcest" id="sest">
+                                <optgroup label="Regiao sudeste">
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="SP" selected>Sao Paulo</option>
+                                    <option value="MG">Minas Gerais</option>
+                                </optgroup>
+                                <optgroup label="Regiao Sul">
+                                    <option value="PR">Parana</option>
+                                    <option value="ST">Santa Catarina</option>
+                                </optgroup>
+                                
+                            </select>
+                        </p>
+                        <p>
+                            <label for="tcid">Cidade:</label>
+                            <input type="text" name="txtcid" id="tcid" size="20" maxlength="40" placeholder="Sua Cidade" list="cidade">
+                            <datalist id="cidade">
+                            <option value="Sao jose dos campos"></option>
+                                <option value="Sao Paulo"></option>
+                                <option value="Jacarei"></option>
+                                <option value="Paraibuna"></option>
+                            </datalist>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="mensagem">
+                        <legend>
+                            Mensagem do Usuário:
+                        </legend> 
+                        <p>
+                            <label for="tgrau">Grau de Urgência:</label>
+                            Min<input type="range" name="txtgrau" id="tgrau" min="0" max="10" step="2">Max
+                        </p>
+                        <p>
+                            <label for="tmsg"></label>Mensagem:</label>
+                            <textarea name="txtmsg" id="tmsg" cols="35" rows="5" placeholder="Digite sua Mensagem"></textarea>    
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="pedido">
+                        <legend>
+                            Quero um Google Glass
+                        </legend>  
+                        <p><input type="checkbox" name="txtped" id="tped" checked>
+                            <label for="tped">Gostaria de adquirir um Google Glass quando disponível
+                            </label>
+                        </p> 
+                        <p>
+                            <label for="tcor">Cor:</label>
+                            <input type="color" name="txtcor" id="tcor" value="#ff0000">
+                        </p> 
+                        <p>
+                            <label for="cqtd">Quantidade:</label>
+                            <input type="number" name="txtqtd" id="cqtd" min="0" max="5" >
+                        </p> 
+                        <p>
+                            <label for="ctot">Preço Total: R$</label>
+                            <input type="text" name="txttot" id="ctot" readonly>
+                        </p> 
+                    </fieldset>
+
+                    <input type="image" name="btnEnviar" src="_imagens/botao-enviar.png">
+                </form>
+            </article>
+        </section>
+
+        <footer id="rodape">
+            <p>
+                Copyright&copy; 2013 - by Pablo Nathan<br>
+                <a href="http://facebook.com/cursosemvideo" target="blank"> Facebook</a> |
+                <a href="http://twitter.com/cursosemvideo" target="blank"> Twitter</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
